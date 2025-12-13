@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Leaflet Map</title>
+    <title>TP Complet - Leaflet + OpenRouteService</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="leaflet.css"/>
@@ -9,8 +9,62 @@
     <script src="leaflet.js"></script>
 </head>
 <body>
-    <div id="distance-info">Distance: </div>
-    <div id="mapid"></div>
+    <div class="container">
+        <!-- Colonne gauche : Formulaire et contrôles -->
+        <div class="column left">
+            <h1>Recherche d'itinéraire</h1>
+            
+            <!-- Formulaire TP6 -->
+            <form id="route-form" class="form">
+                <label for="start">Coordonnées de départ :</label>
+                <input type="text" id="start" name="start" placeholder="Ex: -6.8498,33.9716" value="-6.8498,33.9716" required>
+                
+                <label for="end">Coordonnées d'arrivée :</label>
+                <input type="text" id="end" name="end" placeholder="Ex: -7.5898,33.573" value="-7.5898,33.573" required>
+                
+                <button type="submit">Obtenir l'itinéraire</button>
+                <button type="button" id="clear-route-btn">Effacer l'itinéraire</button>
+            </form>
+            
+            <!-- Informations de distance (TP1) -->
+            <div id="distance-info" class="info-box">
+                Distance à vol d'oiseau : --
+            </div>
+            
+            <!-- Informations itinéraire (TP5) -->
+            <div id="route-info" class="info-box">
+                Aucun itinéraire calculé
+            </div>
+            
+            <!-- Points d'intérêt (TP4) -->
+            <div id="poi-section">
+                <h3>Points d'intérêt (Paris)</h3>
+                <label for="poi-select">Choisissez un Point d'intérêt :</label>
+                <select id="poi-select">
+                    <option value="">-- Sélectionnez --</option>
+                    <option value="Musée d'Art Moderne">Musée d'Art Moderne</option>
+                    <option value="Jardin Botanique">Jardin Botanique</option>
+                    <option value="Cathédrale Notre-Dame">Cathédrale Notre-Dame</option>
+                </select>
+            </div>
+            
+            <!-- Couches de carte (TP1) -->
+            <div id="layer-control">
+                <h3>Fond de carte</h3>
+                <div class="layer-options">
+                    <label><input type="radio" name="basemap" value="osm" checked> OpenStreetMap</label>
+                    <label><input type="radio" name="basemap" value="google"> Google Maps</label>
+                    <label><input type="radio" name="basemap" value="arcgis"> ArcGIS Satellite</label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Colonne droite : Carte -->
+        <div class="column right">
+            <div id="mapid"></div>
+        </div>
+    </div>
+    
     <script src="map.js"></script>
 </body>
 </html>

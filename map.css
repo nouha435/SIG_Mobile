@@ -1,22 +1,172 @@
+/* map.css */
+
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    height: 100%;
+}
+
+.column {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Colonne gauche */
+.left {
+    flex: 0 0 400px;
+    background-color: #f4f4f4;
+    border-right: 1px solid #ccc;
+    overflow-y: auto;
+}
+
+.left h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #0074D9;
+    padding-bottom: 10px;
+}
+
+.left h3 {
+    color: #555;
+    font-size: 18px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+/* Formulaire */
+.form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.form input:focus {
+    border-color: #0074D9;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0,116,217,0.2);
+}
+
+/* Boutons */
+button {
+    background-color: #0074D9;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+    width: 48%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#clear-route-btn {
+    background-color: #dc3545;
+}
+
+#clear-route-btn:hover {
+    background-color: #c82333;
+}
+
+/* Boîtes d'information */
+.info-box {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-left: 4px solid #0074D9;
+}
+
+.info-box:last-child {
+    border-left-color: #28a745;
+}
+
+/* Sélecteur POI */
+#poi-section select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    background: white;
+}
+
+/* Contrôle des couches */
+.layer-options {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.layer-options label {
+    display: block;
+    padding: 8px 0;
+    cursor: pointer;
+}
+
+.layer-options input {
+    margin-right: 10px;
+}
+
+/* Colonne droite - Carte */
+.right {
+    flex: 1;
+    padding: 0;
+    position: relative;
 }
 
 #mapid {
     height: 100%;
-    width: 100vw;
+    width: 100%;
+    border-radius: 8px;
 }
-#distance-info {
-    position: absolute;
-    top: 10px;
-    left: 50px;
-    z-index: 1000;
-    background: white;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .left {
+        flex: 0 0 auto;
+        max-height: 50vh;
+        overflow-y: auto;
+    }
+    
+    .right {
+        flex: 1;
+    }
 }
