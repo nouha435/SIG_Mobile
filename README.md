@@ -1,24 +1,41 @@
-# SIG_Mobile
-# 🗺️ Leaflet Mapping Project
+# 🗺️ Route Planner – Application de Planification d’Itinéraires
 
-A complete interactive mapping application built with Leaflet.js, featuring multiple tile layers, draggable markers, and real-time distance calculation.
+Application web interactive de cartographie permettant la visualisation de points d’intérêt et le calcul d’itinéraires entre deux positions géographiques.
 
-## ✨ Features
+---
 
-- **Multiple Base Layers**: OpenStreetMap, Google Maps, and ArcGIS Satellite
-- **Interactive Markers**: Two draggable markers with real-time position tracking
-- **Distance Calculation**: Automatic distance computation between markers
-- **Layer Control**: Easy switching between different map providers
-- **Responsive Design**: Works on desktop and mobile devices
+## 🚀 Aperçu
+**Route Planner** est une application SIG web basée sur **Leaflet** et **OpenRouteService**, permettant de :
+- visualiser une carte interactive,
+- afficher des points d’intérêt,
+- calculer des itinéraires routiers,
+- mesurer des distances entre deux points.
 
-## 🚀 Quick Start
+---
 
-### Prerequisites
-- Web browser (Chrome, Firefox, Safari, etc.)
-- Basic web server (optional, for local development)
+## 🛠️ Technologies utilisées
+- **HTML5**
+- **CSS3**
+- **JavaScript (ES6+)**
+- **Leaflet 1.9.4**
+- **OpenRouteService API**
+- **GeoJSON**
+- **Font Awesome**
 
-### Installation
-1. Clone the repository:
+---
+
+## ✨ Fonctionnalités
+- 🗺️ Carte interactive (OSM, Google Maps, ArcGIS)
+- 📍 Points d’intérêt (POI)
+- 🚗 Calcul d’itinéraires
+- 📏 Distance à vol d’oiseau
+- 🔄 Marqueurs déplaçables
+- 📱 Design responsive
+
+---
+
+## 📦 Installation
+
+### Cloner le dépôt
 ```bash
-git clone https://github.com/yourusername/leaflet-mapping-project.git
-cd leaflet-mapping-project
+git clone https://github.com/votre-username/route-planner.git
